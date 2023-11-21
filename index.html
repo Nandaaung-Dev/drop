@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* since nested groupes are not supported we have to use 
+     regular css for the nested dropdowns 
+  */
+      li > ul {
+        transform: translatex(100%) scale(0);
+      }
+      li:hover > ul {
+        transform: translatex(101%) scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    <!-- component -->
+    <div class="group inline-block">
+      <button
+        class="outline-none focus:outline-none border px-3 py-1 bg-white rounded-sm flex items-center min-w-32"
+      >
+        <span class="pr-1 font-semibold flex-1">Dropdown</span>
+      </button>
+      <ul
+        class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top w-1/3"
+      >
+        <li class="rounded-sm px-3 py-1 hover:bg-gray-100">Programming</li>
+        <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+          <button
+            class="w-full text-left flex items-center outline-none focus:outline-none"
+          >
+            <span class="pr-1 flex-1">Langauges</span>
+          </button>
+          <ul
+            class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left w-full"
+          >
+            <li class="px-3 py-1 hover:bg-gray-100">Javascript</li>
+            <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+              <button
+                class="w-full text-left flex items-center outline-none focus:outline-none"
+              >
+                <span class="pr-1 flex-1">Python</span>
+              </button>
+              <ul
+                class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left w-full"
+              >
+                <li class="px-3 py-1 hover:bg-gray-100">2.7</li>
+                <li class="px-3 py-1 hover:bg-gray-100">3+</li>
+              </ul>
+            </li>
+            <li class="px-3 py-1 hover:bg-gray-100">Go</li>
+            <li class="px-3 py-1 hover:bg-gray-100">Rust</li>
+          </ul>
+        </li>
+        <li class="rounded-sm px-3 py-1 hover:bg-gray-100">Programming</li>
+        <li class="rounded-sm px-3 py-1 hover:bg-gray-100">DevOps</li>
+        <li class="rounded-sm px-3 py-1 hover:bg-gray-100">Testing</li>
+      </ul>
+    </div>
+  </body>
+</html>
